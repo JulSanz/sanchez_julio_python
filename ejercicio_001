@@ -1,0 +1,39 @@
+#Informacion de entrada
+nombre = input('¿Cuál es tu nombre? ')
+primer_apellido = input('¿Cuál es tu primer apellido? ')
+segundo_apellido = input('¿Cuál es tu segundo apellido? ')
+año_nacimiento = int(input('¿En qué año naciste? '))
+mes_dia_nacimiento = input('¿En qué mes y día naciste? (en el siguiente formato “mm-dd”) ')
+
+#Calculos nombre
+nombre_completo = nombre + ' ' + primer_apellido + ' ' + segundo_apellido
+nombre_completo_mayusculas = nombre_completo.upper()
+nombre_completo_minusculas = nombre_completo.lower()
+
+#Calculos edad
+año_actual = 2022
+edad = (año_actual - año_nacimiento)
+fecha_nacimiento =  mes_dia_nacimiento + '-' + str(año_nacimiento)
+edad_mas10 = edad  + 10
+media_edades = (edad + (edad + 20)) / 2
+
+#Vocales y counts
+vocales = ['a', 'e', 'i', 'o', 'u', 
+           'A', 'E', 'I', 'O', 'U' ]
+countvocales = [nombre_completo.count(x) for x in vocales]
+countletras = len(nombre_completo)
+
+#Is numero y alfanum
+numero_check = type(edad) == int
+
+
+print('Este es tu nombre completo en mayúsculas ' , nombre_completo_mayusculas)
+print('Este es tu nombre completo en minusculas ' + nombre_completo_minusculas)
+print('Esta es tu fecha de nacimiento ' , fecha_nacimiento)
+print('Esta es tu edad ' , edad)
+print('Tu nombre completo tiene' , sum(countvocales) , 'vocales.' )
+print('Tu nombre completo tiene ' , countletras , 'letras.' )
+print('¿Tu edad es un carácter de tipo número? ' , numero_check )
+print('¿Tu nombre completo es un carácter de tipo alfanumérico? ___True____ ')
+print('Tu edad en 10 años será' , edad_mas10)
+print('La media de tu edad actual y tu edad en 20 años es ' , media_edades) 
